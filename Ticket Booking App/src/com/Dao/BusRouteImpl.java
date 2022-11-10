@@ -130,8 +130,16 @@ public class BusRouteImpl implements BusRoute{
 
 			ResultSet r = p.executeQuery();
 			
-			if(r.next() && r.getString("result").contains("no") ) {
+			if(r.next() && r.getString("result").contains("no")) {
+				PreparedStatement ps = conn.prepareStatement("select routId from busroute where source = ? AND destination = ?");
 				
+				ps.setString(1, src);
+				ps.setString(2, dest);
+				
+				ResultSet rs = ps.executeQuery();
+			}
+			else {
+				throw new BookingException("seat already Allocated, select another one");
 			}
 			
 			

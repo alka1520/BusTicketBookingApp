@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.Dao.BusRoute;
+import com.Dao.BusRouteImpl;
+import com.exception.BookingException;
+
 public class SelectSeatsAndBusID {
 	public static void selectbus(String date) {
 		Scanner scn = new Scanner(System.in);
@@ -15,14 +19,20 @@ public class SelectSeatsAndBusID {
 		int noseats = scn.nextInt();
 		
 		System.out.println("Enter seat number you want to reserve ");
-		
-		while(true) {
+		List<Integer> seats = new ArrayList<>();
+		while(noseats-- > 0) {
 			int seatnumber = scn.nextInt();
 			
+			BusRoute dao = new BusRouteImpl();
+			try {
+				String d = dao.confirmSeat(seatnumber, bid);
+				seats.add(seatnumber);
+			} catch (BookingException e) {
+				System.out.println(e.getMessage());
+			}
 			
-			List<Integer> seats = new ArrayList<>();
 			
-			seats.add(seatnumber);
+			
 		}
 		
 		
