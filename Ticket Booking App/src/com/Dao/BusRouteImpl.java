@@ -77,7 +77,7 @@ public class BusRouteImpl implements BusRoute{
 	}
 
 	@Override
-	public String confirmBooking(int bid, int noOfSeats) throws BookingException {
+	public String confirmTotalNoOfSeats(int bid, int noOfSeats) throws BookingException {
 		
 		String message = "Error Occurred !";
 		
@@ -118,9 +118,9 @@ public class BusRouteImpl implements BusRoute{
 	}
 
 	@Override
-	public String confirmSeat(int pid, int seat, int bid) throws BookingException {
+	public String confirmSeatNumberForReservation(int pid, int seat, int bid) throws BookingException {
 		
-		String msg = "Seat Unavialable";
+		String msg = "Seat Unavailable";
 		
 		try(Connection conn = DButil.preConnection()) {
 		
@@ -137,6 +137,8 @@ public class BusRouteImpl implements BusRoute{
 					throw new BookingException("seat already Allocated, select another one");
 				}
 			}
+			
+			
 				PreparedStatement ps2 = conn.prepareStatement("insert into seatallocation (pid,slable,bid) values(?,?,?)");
 				
 				ps2.setInt(1, pid);
@@ -257,7 +259,7 @@ public class BusRouteImpl implements BusRoute{
 				
 				ps2.setInt(1, pid);
 				
-				int x = ps.executeUpdate();
+				int x = ps2.executeUpdate();
 				
 				if(x > 0) {
 					PreparedStatement ps3 = conn.prepareStatement("update busdetails set bseats = bseats+? where bid = ?");

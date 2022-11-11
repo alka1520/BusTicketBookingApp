@@ -11,11 +11,11 @@ public interface BusRoute {
 	
 	public List<BusDetails> UserSelectSourceAndDestination(String date, String src, String dest) throws BookingException;
 
-	public String confirmBooking(int bid, int noOfSeats) throws BookingException;
+	public String confirmTotalNoOfSeats(int bid, int noOfSeats) throws BookingException;
 	
 	public int InsertPassengerDetails(String name, String email) throws BookingException;
 	
-	public String confirmSeat(int pid, int seat, int bid) throws BookingException;
+	public String confirmSeatNumberForReservation(int pid, int seat, int bid) throws BookingException;
 	
 	public List<BookingDetails> bookingDetailsPrint(int pid,String date) throws BookingException;
 	

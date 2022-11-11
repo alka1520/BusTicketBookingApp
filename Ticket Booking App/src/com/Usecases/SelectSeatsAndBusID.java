@@ -9,7 +9,9 @@ import com.Dao.BusRouteImpl;
 import com.exception.BookingException;
 
 public class SelectSeatsAndBusID {
+	
 	public static void selectbus(String date) {
+		
 		Scanner scn = new Scanner(System.in);
 		
 		System.out.println("Enter BusID, You Want to book ");
@@ -21,9 +23,9 @@ public class SelectSeatsAndBusID {
 		BusRoute dao = new BusRouteImpl();
 		
 		try {
-			String msg = dao.confirmBooking(bid, noseats);
+			String msg = dao.confirmTotalNoOfSeats(bid, noseats);
 			
-			System.out.println("Enter name");
+			System.out.println("Enter passenger name");
 			String name = scn.next();
 			
 			System.out.println("Enter email");
@@ -40,7 +42,7 @@ public class SelectSeatsAndBusID {
 				int seatnumber = scn.nextInt();
 				
 				try {
-					String d = dao.confirmSeat(pid,seatnumber, bid);
+					String d = dao.confirmSeatNumberForReservation(pid,seatnumber, bid);
 					seats.add(seatnumber);
 				} catch (BookingException e) {
 					System.out.println(e.getMessage());

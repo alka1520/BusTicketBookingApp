@@ -97,9 +97,9 @@ public class BookingDetails {
 	}
 	@Override
 	public String toString() {
-		return "BookingDetails [BookingId=" + BookingId + ", TicketId=" + TicketId + ", Name=" + Name + ", BusName="
+		return "BookingId=" + BookingId + ", TicketId=" + TicketId + ", Name=" + Name + ", BusName="
 				+ BusName + ", BusType=" + BusType + ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime
-				+ ", TravelDate=" + TravelDate + ", From=" + From + ", To=" + To + ", SeatNO=" + SeatNO + "]";
+				+ ", TravelDate=" + TravelDate + ", From=" + From + ", To=" + To + ", SeatNO=" + SeatNO ;
 	}
 	
 	

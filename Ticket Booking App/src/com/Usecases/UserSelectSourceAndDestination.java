@@ -28,6 +28,7 @@ public class UserSelectSourceAndDestination {
 			List<BusDetails> busdata = dao.UserSelectSourceAndDestination(date,src, des);
 			busdata.forEach(bdata -> System.out.println(bdata));
 			
+			System.out.println();
 			System.out.println("Enter 1 to book bus :)");
 			System.out.println("Enter 2 to Exit :(");
 			

@@ -12,8 +12,8 @@ public class BusDetails {
 	
 	@Override
 	public String toString() {
-		return "BusDetails [BusId=" + BusId + ", BusName=" + BusName + ", BusType=" + BusType + ", RouteId=" + RouteId
-				+ ", BusSeats=" + BusSeats + ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime + "]";
+		return "BusId=" + BusId + ", BusName=" + BusName + ", BusType=" + BusType + ", RouteId=" + RouteId
+				+ ", BusSeats=" + BusSeats + ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime ;
 	}
 
 	public int getBusId() {

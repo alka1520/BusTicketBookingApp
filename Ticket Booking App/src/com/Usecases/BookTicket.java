@@ -11,6 +11,7 @@ import com.model.BookingDetails;
 public class BookTicket {
 	
 	public static void BookTicket(int pid,String date) {
+		
 		Scanner scn = new Scanner(System.in);
 		BusRoute dao = new BusRouteImpl();
 		try {
@@ -21,6 +22,7 @@ public class BookTicket {
 			
 			if(scn.nextInt() == 1) {
 				String cBooking = dao.cancelBooking(pid);
+				System.out.println(cBooking);
 			}
 		} catch (BookingException e) {
 			System.out.println(e.getMessage());
