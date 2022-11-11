@@ -147,7 +147,7 @@ public class BusRouteImpl implements BusRoute{
 				
 				int x = ps2.executeUpdate();
 				if(x>0) {
-					msg = "Seat Allocated";
+					msg = seat+" Seat reserved";
 				}else{
 					throw new BookingException("Error Occurred !");
 				}

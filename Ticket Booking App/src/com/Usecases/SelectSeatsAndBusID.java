@@ -43,10 +43,11 @@ public class SelectSeatsAndBusID {
 				
 				try {
 					String d = dao.confirmSeatNumberForReservation(pid,seatnumber, bid);
+					System.out.println(d);
 					seats.add(seatnumber);
 				} catch (BookingException e) {
 					System.out.println(e.getMessage());
-					noseats++;
+					
 				}				
 			}
 			
