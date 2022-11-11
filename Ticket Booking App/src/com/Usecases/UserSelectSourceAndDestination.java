@@ -36,6 +36,7 @@ public class UserSelectSourceAndDestination {
 			if(selection == 1) {
 				SelectSeatsAndBusID ssab = new SelectSeatsAndBusID();
 				ssab.selectbus(date);
+				
 			}else if(selection == 2) {
 				System.out.println("Thank you :)");
 			}else {
