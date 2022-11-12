@@ -13,12 +13,14 @@ public interface BusRoute {
 
 	public String confirmTotalNoOfSeats(int bid, int noOfSeats) throws BookingException;
 	
-	public int InsertPassengerDetails(String name, String email) throws BookingException;
+	public int getUserId(String uname) throws BookingException;
 	
-	public String confirmSeatNumberForReservation(int pid, int seat, int bid) throws BookingException;
+	public String confirmSeatNumberForReservation(int pid, int seat, int bid, String date) throws BookingException;
 	
-	public List<BookingDetails> bookingDetailsPrint(int pid,String date) throws BookingException;
+	public String getBookingDatebyuserid(int userid)throws BookingException;
 	
-	public String cancelBooking(int pid) throws BookingException;
+	public List<BookingDetails> bookingDetailsPrint(int pid, String date, String uname) throws BookingException;
+	
+	public String cancelBooking(int userid) throws BookingException;
 
 }

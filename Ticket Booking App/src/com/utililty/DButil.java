@@ -18,7 +18,7 @@ public class DButil {
 			e.printStackTrace();
 		}
 		
-		String url = "jdbc:mysql://localhost:3306/web20db";
+		String url = "jdbc:mysql://localhost:3306/sb101db";
 		
 		try {
 			
@@ -27,8 +27,6 @@ public class DButil {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
 		
 		return conn;
 		

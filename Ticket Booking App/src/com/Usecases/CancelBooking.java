@@ -8,32 +8,35 @@ import com.Dao.BusRouteImpl;
 import com.exception.BookingException;
 import com.model.BookingDetails;
 
-public class BookTicket {
-	
-	public BookTicket(int userid,String date,String uname,int bid) {
-		
+public class CancelBooking {
+
+	public CancelBooking(String uname) {
 		Scanner scn = new Scanner(System.in);
-		System.out.println("_________________________\n");
+		System.out.println("_________________________");
 
 		BusRoute dao = new BusRouteImpl();
+		
 		try {
+			int userid = dao.getUserId(uname);
+			String date = dao.getBookingDatebyuserid(userid);
 			List<BookingDetails> booking = dao.bookingDetailsPrint(userid,date,uname);
 			booking.forEach(ticketDetails -> System.out.println(ticketDetails));
 			
-			System.out.println("\nEnter 1 : cancel booking");
-			System.out.println("Enter 0 : Exit");
-			
+			System.out.println("\n Enter 1 : confirming cancel");
+			System.out.println("\n Enter 0 : Exit");
 			int select = scn.nextInt();
 			if(select == 1) {
-				CancelBooking cb = new CancelBooking(uname);
-			}else if(select == 0) {
-				System.out.println("\nThank you :)");
+				String msg = dao.cancelBooking(userid);
+				System.out.println("\n Booking Cancelation successfull .");
 			}else {
-				System.out.println("Enter valid choice . ");
+				System.out.println("\n Thank you :)");
 			}
+			
 		} catch (BookingException e) {
 			System.out.println(e.getMessage());
 		}
-	}
+		
+		System.out.println("_________________________");
 
+	}
 }

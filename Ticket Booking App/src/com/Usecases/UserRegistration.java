@@ -12,27 +12,38 @@ import com.model.Admin;
 import com.model.User;
 
 public class UserRegistration {
-	public static void main(String[] args) {
+	
+	public UserRegistration() {
+		
 		Scanner scn = new Scanner(System.in);
 		
-		System.out.println("enter name");
+		System.out.println("_________________________");
+		System.out.println("____Sign up Page____ \n");
+		
+		System.out.print("Name : ");
 		String name = scn.next();
 		
-		System.out.println("enter password");
+		System.out.print("Username : ");
+		String username = scn.next();
+		
+		System.out.print("Password : ");
 		String pword = scn.next();
 		
-		System.out.println("enter email");
-		String email = scn.next();
+		System.out.print("Contact : ");
+		String contact = scn.next();
 		
-		User user = new User(name, email, pword);
+		User user = new User(name,username, pword, contact);
 		
 		UserDao dao = new UserDaoImpl();
 		
 		try {
 			String result = dao.userRegistration(user);
 			System.out.println(result);
+			UserSelectSourceAndDestination ussad = new UserSelectSourceAndDestination(username);
+			
 		} catch (UserException e) {
-			System.out.println(e.getMessage());
+			System.out.println("\n"+e.getMessage());
 		}
+		System.out.println("____Sign up Page____ \n");
 	}
 }

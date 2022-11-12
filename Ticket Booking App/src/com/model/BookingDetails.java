@@ -14,6 +14,8 @@ public class BookingDetails {
 	private String From;
 	private String To;
 	private int SeatNO;
+	private String HelpLine;
+	
 	public int getBookingId() {
 		return BookingId;
 	}
@@ -80,8 +82,10 @@ public class BookingDetails {
 	public void setSeatNO(int seatNO) {
 		SeatNO = seatNO;
 	}
+	
+	
 	public BookingDetails(int bookingId, int ticketId, String name, String busName, String busType, String arrivalTime,
-			String departureTime, String travelDate, String from, String to, int seatNO) {
+			String departureTime, String travelDate, String from, String to, int seatNO, String helpLine) {
 		super();
 		BookingId = bookingId;
 		TicketId = ticketId;
@@ -94,12 +98,22 @@ public class BookingDetails {
 		From = from;
 		To = to;
 		SeatNO = seatNO;
+		HelpLine = helpLine;
 	}
+	
 	@Override
 	public String toString() {
-		return "BookingId=" + BookingId + ", TicketId=" + TicketId + ", Name=" + Name + ", BusName="
+		return "BookingDetails: \nBookingId=" + BookingId + ", TicketId=" + TicketId + ", Name=" + Name + ", BusName="
 				+ BusName + ", BusType=" + BusType + ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime
-				+ ", TravelDate=" + TravelDate + ", From=" + From + ", To=" + To + ", SeatNO=" + SeatNO ;
+				+ ", TravelDate=" + TravelDate + ", From=" + From + ", To=" + To + ", SeatNO=" + SeatNO + ", HelpLine="
+				+ HelpLine ;
+	}
+	
+	public String getHelpLine() {
+		return HelpLine;
+	}
+	public void setHelpLine(String helpLine) {
+		HelpLine = helpLine;
 	}
 	
 	
