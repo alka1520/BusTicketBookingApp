@@ -2,7 +2,7 @@ package com.Usecases;
 
 import java.util.Scanner;
 
-public class BusTicketRerservation {
+public class MainBusTicketRerservation {
 	
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
