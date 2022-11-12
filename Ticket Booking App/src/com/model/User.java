@@ -3,44 +3,71 @@ package com.model;
 public class User {
 	
 //	private int pid;
-	private String pname;
-	private String email;
-	private String pword;
+//	private String pname;
+//	private String email;
+//	private String pword;
 //	public int getPid() {
 //		return pid;
 //	}
 //	public void setPid(int pid) {
 //		this.pid = pid;
 //	}
-	public String getPname() {
-		return pname;
+	private String name;
+	private int userid;
+	private String username;
+	private String password;
+	private String contact;
+	
+	public String getName() {
+		return name;
 	}
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public String getPassword() {
+		return password;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getPword() {
-		return pword;
+	
+	public String getUsername() {
+		return username;
 	}
-	public void setPword(String pword) {
-		this.pword = pword;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public User( String pname, String email, String pword) {
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+	public User(int userid, String username, String contact) {
 		super();
-//		this.pid = pid;
-		this.pname = pname;
-		this.email = email;
-		this.pword = pword;
+		this.userid = userid;
+		this.username = username;
+		this.contact = contact;
+	}
+	public User(String name, String username, String password, String contact) {
+		super();
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.contact = contact;
 	}
 	@Override
 	public String toString() {
-		return "User [ pname=" + pname + ", email=" + email + ", pword=" + pword + "]";
+		return "User Detail \n name=" + name + ", username=" + username + ", contact=" + contact + "]";
 	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	
+	
 	
 	
 }

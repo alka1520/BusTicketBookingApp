@@ -10,16 +10,20 @@ import com.exception.BookingException;
 import com.model.BusDetails;
 
 public class UserSelectSourceAndDestination {
-	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in);
+	
+	public UserSelectSourceAndDestination(String uname) {
 		
-		System.out.println("enter date in yyyy-mm-dd format");
+		Scanner scn = new Scanner(System.in);
+		System.out.println("_________________________");
+		System.out.println("____Reservation Page____ \n");
+		
+		System.out.print("Date[yyyy-mm-dd] : ");
 		String date = scn.next();
 		
-		System.out.println("enter source");
+		System.out.print("Source : ");
 		String src= scn.next();
 		
-		System.out.println("enter destination");
+		System.out.print("Destination : ");
 		String des= scn.next();
 				
 		BusRoute dao = new BusRouteImpl();
@@ -29,30 +33,42 @@ public class UserSelectSourceAndDestination {
 			busdata.forEach(bdata -> System.out.println(bdata));
 			
 			System.out.println();
-			System.out.println("Enter 1 to book bus :)");
-			System.out.println("Enter 2 to Exit :(");
+			System.out.println("Enter 1 : Reservation ");
+			System.out.println("Enter 0 : Exit ");
 			
 			int selection = scn.nextInt();
 			
 			if(selection == 1) {
-				SelectSeatsAndBusID ssab = new SelectSeatsAndBusID();
-				ssab.selectbus(date);
+				UserSelectSeatsAndBusID ssab = new UserSelectSeatsAndBusID(date,uname);
 				
-			}else if(selection == 2) {
-				System.out.println("Thank you :)");
+			}else if(selection == 0) {
+				System.out.println("\n Thank you :)");
+				
 			}else {
-				System.out.println("enter valid choice");
+				System.out.println("\n enter valid choice");
 			}
 			
 			
 		} catch (BookingException e) {
 			System.out.println(e.getMessage());
+			
+			System.out.println("Enter 1 : Continue \nEnter 0 : Exit ");
+			int select = scn.nextInt();
+			if(select == 1) {
+				UserSelectSourceAndDestination ussad = new UserSelectSourceAndDestination(uname);
+			}else if(select == 0) {
+				System.out.println("Thank you .");
+				return;
+			}
+			
 		}
 		
+		System.out.println("_________________________");
 		
 		
 		
 	
+		
 	}
 
 }

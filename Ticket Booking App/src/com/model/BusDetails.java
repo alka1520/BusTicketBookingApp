@@ -9,11 +9,36 @@ public class BusDetails {
 	private int BusSeats;
 	private String ArrivalTime;
 	private String DepartureTime;
+	private String Helpline;
 	
+	public BusDetails(String busName, String busType, int routeId, int busSeats, String arrivalTime,
+			String departureTime, String helpline) {
+		super();
+		BusName = busName;
+		BusType = busType;
+		RouteId = routeId;
+		BusSeats = busSeats;
+		ArrivalTime = arrivalTime;
+		DepartureTime = departureTime;
+		Helpline = helpline;
+	}
+	
+	public BusDetails(int busId, String busName, String busType, int busSeats, String arrivalTime,
+			String departureTime, String helpline) {
+		super();
+		BusId = busId;
+		BusName = busName;
+		BusType = busType;
+		BusSeats = busSeats;
+		ArrivalTime = arrivalTime;
+		DepartureTime = departureTime;
+		Helpline = helpline;
+	}
+
 	@Override
 	public String toString() {
-		return "BusId=" + BusId + ", BusName=" + BusName + ", BusType=" + BusType + ", RouteId=" + RouteId
-				+ ", BusSeats=" + BusSeats + ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime ;
+		return "BusDetails \nBusId=" + BusId + ", BusName=" + BusName + ", BusType=" + BusType + ", BusSeats=" + BusSeats
+				+ ", ArrivalTime=" + ArrivalTime + ", DepartureTime=" + DepartureTime + ", Helpline=" + Helpline ;
 	}
 
 	public int getBusId() {
@@ -72,15 +97,12 @@ public class BusDetails {
 		DepartureTime = departureTime;
 	}
 
-	public BusDetails(int busId, String busName, String busType, int busSeats, String arrivalTime,
-			String departureTime) {
-		super();
-		BusId = busId;
-		BusName = busName;
-		BusType = busType;
-		BusSeats = busSeats;
-		ArrivalTime = arrivalTime;
-		DepartureTime = departureTime;
+	public String getHelpline() {
+		return Helpline;
+	}
+
+	public void setHelpline(String helpline) {
+		Helpline = helpline;
 	}
 	
 	

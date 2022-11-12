@@ -8,22 +8,26 @@ import com.exception.AdminException;
 import com.model.Admin;
 
 public class AdminRegistration {
-	public static void main(String[] args) {
+	
+	public AdminRegistration() {
 		Scanner scn = new Scanner(System.in);
 		
-		System.out.println("enter name");
+		System.out.println("_________________________");
+		System.out.println("____Sign up Page____ \n");
+		
+		System.out.print("Enter name : ");
 		String name = scn.next();
 		
-		System.out.println("enter username");
+		System.out.print("Enter username : ");
 		String uname = scn.next();
 		
-		System.out.println("enter password");
+		System.out.print("Enter password : ");
 		String pword = scn.next();
 		
-		System.out.println("enter contact");
+		System.out.print("Enter contact : ");
 		String phn = scn.next();
 		
-		System.out.println("enter email");
+		System.out.print("Enter email : ");
 		String email = scn.next();
 		
 		Admin admin = new Admin();
@@ -38,8 +42,14 @@ public class AdminRegistration {
 		try {
 			String result = dao.adminRegistration(admin);
 			System.out.println(result);
+			AdminLogin la = new AdminLogin();
+			
 		} catch (AdminException e) {
 			System.out.println(e.getMessage());
+		}finally {
+			System.out.println("_________________________");
 		}
+		
 	}
+			
 }
