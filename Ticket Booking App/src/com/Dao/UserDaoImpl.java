@@ -18,11 +18,12 @@ public class UserDaoImpl implements UserDao{
 		String result = "not registered";
 		
 		try(Connection conn = DButil.preConnection()) {
-			PreparedStatement ps = conn.prepareStatement("insert into user(username,password,contact) values (?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into user(username,password,contact,name) values (?,?,?,?)");
 			
 			ps.setString(1, user.getUsername());
 			ps.setString(2, user.getPassword());
 			ps.setString(3, user.getContact());
+			ps.setString(4, user.getName());
 			
 			
 			int x = ps.executeUpdate();

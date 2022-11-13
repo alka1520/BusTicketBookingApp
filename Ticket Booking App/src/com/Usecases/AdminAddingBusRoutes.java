@@ -10,15 +10,15 @@ public class AdminAddingBusRoutes {
 	
 	public AdminAddingBusRoutes(String contact) {
 		
-		Scanner scn = new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("___________________________");
 		System.out.println("____Enter Route Details____ \n");
 		
 		System.out.print("From : ");
-		String from = scn.next();
+		String from = sc.next();
 		
 		System.out.print("To : ");
-		String to = scn.next();
+		String to = sc.next();
 		
 		AdminDao dao = new AdminDaoImpl();
 		int routeid;
@@ -36,17 +36,11 @@ public class AdminAddingBusRoutes {
 			System.out.println("Enter 0 to Return");
 			
 			while(true) {
-				int select = scn.nextInt();
+				int select = sc.nextInt();
 				if(select == 1) {
 					AdminAddingBusRoutes aabr = new AdminAddingBusRoutes(contact);
-				}else if(select == 0){
-					break;
-				}else {
-					System.out.println("Please enter valid choice");
 				}
 			}
-			return;
-			
 		}
 	}
 }

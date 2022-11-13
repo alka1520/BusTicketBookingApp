@@ -11,22 +11,21 @@ public class AdminAddingBusDetails {
 
 	public AdminAddingBusDetails(int broute,String contact) {
 		
-		Scanner scn = new Scanner(System.in);
-		
+		Scanner scnn = new Scanner(System.in);
 		System.out.print("Bus Name : ");
-		String bname = scn.next();
+		String bname = scnn.nextLine();
 		
 		System.out.print("Bus Type : ");
-		String bustype = scn.next();
+		String bustype = scnn.next();
 		
 		System.out.print("Departure Time(HH:MM:SS) : ");
-		String dtime = scn.next();
+		String dtime = scnn.next();
 		
 		System.out.print("Arrival Time(HH:MM:SS) : ");
-		String atime = scn.next();
+		String atime = scnn.next();
 		
 		System.out.print("Total Seats : ");
-		int bseats = scn.nextInt();
+		int bseats = scnn.nextInt();
 		
 		BusDetails bdetails = new BusDetails(bname, bustype, broute, bseats, dtime, atime,contact);
 		AdminDao dao = new AdminDaoImpl();
@@ -34,7 +33,7 @@ public class AdminAddingBusDetails {
 		try {
 			String msg = dao.insertBusDetails(bdetails);
 			System.out.println(msg);
-			System.out.println("\n ______________________________ \n");
+			System.out.println("\n _____________________________ \n");
 			
 		} catch (AdminException e) {
 			System.out.println(e.getMessage());
