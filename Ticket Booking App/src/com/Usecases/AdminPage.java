@@ -7,10 +7,9 @@ public class AdminPage {
 	public AdminPage() {
 		
 		Scanner s = new Scanner(System.in);
-		System.out.println("________________________\n");
 		
 		while(true) {
-			
+			System.out.println("________________________\n");
 			System.out.println("Enter 1 : Login");
 			System.out.println("Enter 2 : New Admin/Sign up");
 			System.out.println("Enter 0 : Exit");

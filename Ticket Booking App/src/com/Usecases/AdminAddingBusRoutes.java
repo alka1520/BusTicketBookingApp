@@ -34,10 +34,9 @@ public class AdminAddingBusRoutes {
 		finally {
 			System.out.println("___________________________");
 			
-			System.out.println("Enter 1 to Add Bus Details");
-			System.out.println("Enter 0 to Return");
-			
 			while(true) {
+				System.out.println("Enter 1 to Add Bus Details");
+				System.out.println("Enter 0 to Return");
 				int select = sc.nextInt();
 				if(select == 1) {
 					AdminAddingBusRoutes aabr = new AdminAddingBusRoutes(contact);
