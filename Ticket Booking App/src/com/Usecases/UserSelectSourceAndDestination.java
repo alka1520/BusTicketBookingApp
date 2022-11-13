@@ -25,7 +25,8 @@ public class UserSelectSourceAndDestination {
 		
 		System.out.print("Destination : ");
 		String des= scn.next();
-				
+		System.out.println();	
+		
 		BusRoute dao = new BusRouteImpl();
 		
 		try {

@@ -24,6 +24,7 @@ public class UserPage {
 				UserRegistration ar = new UserRegistration();
 				
 			}else if(select == 0){
+				System.out.println("Thank You .");
 				break;
 				
 			}else {

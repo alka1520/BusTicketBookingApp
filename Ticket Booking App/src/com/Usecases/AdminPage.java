@@ -22,6 +22,7 @@ public class AdminPage {
 				AdminRegistration ar = new AdminRegistration();
 				
 			}else if(select == 0){
+				System.out.println("Thank You .");
 				break;
 				
 			}else {

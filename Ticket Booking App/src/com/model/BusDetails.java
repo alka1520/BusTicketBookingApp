@@ -37,7 +37,7 @@ public class BusDetails {
 
 	@Override
 	public String toString() {
-		return "BusDetails: \n_______________\n BusId : " + BusId + "\n BusName : " + BusName + "\n BusType : " + BusType + "\n BusSeats : " + BusSeats
+		return "BusDetails:\n___________\n BusId : " + BusId + "\n BusName : " + BusName + "\n BusType : " + BusType + "\n BusSeats : " + BusSeats
 				+ "\n ArrivalTime : " + ArrivalTime + "\n DepartureTime : " + DepartureTime + "\n Helpline : " + Helpline +"\n";
 	}
 

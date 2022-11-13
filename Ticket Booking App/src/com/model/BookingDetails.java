@@ -103,7 +103,7 @@ public class BookingDetails {
 	
 	@Override
 	public String toString() {
-		return "BookingDetails: \n_______________\n BookingId : " + BookingId + "\n TicketId : " + TicketId + "\n Name : " + Name + "\n BusName : "
+		return "BookingDetails:\n____________\n BookingId : " + BookingId + "\n TicketId : " + TicketId + "\n Name : " + Name + "\n BusName : "
 				+ BusName + "\n BusType : " + BusType + "\n ArrivalTime : " + ArrivalTime + "\n DepartureTime : " + DepartureTime
 				+ "\n TravelDate : " + TravelDate + "\n From : " + From + "\n To : " + To + "\n SeatNO : " + SeatNO + "\n HelpLine : "
 				+ HelpLine +"\n";
