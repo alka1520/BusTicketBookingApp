@@ -1,3 +1,5 @@
+bus ticket reservation system\\\\\
+
 
 create table Admin 
 (
@@ -8,22 +10,19 @@ contact varchar(12),
 email varchar(15)
 )
 
-
-mysql> select * from admin;
-+----------+----------+-----------+-----------+----------------+
-| name     | username | password  | contact   | email          |
-+----------+----------+-----------+-----------+----------------+
-| abhishek | @abhi    | alka1234  | 123456789 | abhi@gmail.com |
-| alka     | @alka    | alka1234  | 123456789 | alka@gmail.com |
-| shanu    | @shanu   | shanu1234 | 234156778 | sanu@gmail.com |
-+----------+----------+-----------+-----------+----------------+
-3 rows in set (0.02 sec)
-
-
+mysql> desc admin;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(12) | YES  |     | NULL    |       |
+| username | varchar(12) | NO   | PRI | NULL    |       |
+| password | varchar(12) | YES  |     | NULL    |       |
+| contact  | varchar(12) | YES  | UNI | NULL    |       |
+| email    | varchar(15) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
 
 
-
-create table busdetails 
+create table busdetail 
 (
 bid int primary key auto_increment,
 bname varchar(12),
@@ -32,129 +31,103 @@ btype varchar(12),
 bseats int,
 dtime time,
 atime time,
+helpline varchar(10),
+foreign key(helpline) references admin(contact),
 foreign key(routId) references busroute(routId)
 )
 
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('SRV Travels', 1, 'AC',15, '02:00:00','09:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('SRV Travels', 1, 'non-AC', 15, '05:00:00','12:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('SRV Travels', 2, 'non-AC', 20, '06:00:00','09:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('SRV Travels', 2, 'AC', 20, '09:00:00','01:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('HTR Travels', 3, 'non-AC', 20, '06:00:00','09:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('HTR Travels', 3, 'AC', 20, '09:00:00','10:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('PR Travels', 4, 'non-AC', 20, '10:00:00','09:00:00');
-insert into busdetails(bname, routId, btype, bseats, dtime, atime) values('PR Travels', 4, 'AC', 20, '09:00:00','01:00:00');
+insert into busdetail(bname, routId, btype, bseats, dtime, atime,helpline) values('SRV Travels', 1, 'AC',15, '02:00:00','09:00:00','1234567890');
 
-
-mysql> select * from busdetails;
-+-----+-------------+--------+--------+--------+----------+----------+
-| bid | bname       | routId | btype  | bseats | dtime    | atime    |
-+-----+-------------+--------+--------+--------+----------+----------+
-|   2 | SRV Travels |      1 | AC     |     15 | 02:00:00 | 09:00:00 |
-|   3 | SRV Travels |      1 | non-AC |     15 | 05:00:00 | 12:00:00 |
-|   4 | SRV Travels |      2 | non-AC |     20 | 06:00:00 | 09:00:00 |
-|   5 | SRV Travels |      2 | AC     |     20 | 09:00:00 | 01:00:00 |
-|   6 | HTR Travels |      3 | non-AC |     20 | 06:00:00 | 09:00:00 |
-|   7 | HTR Travels |      3 | AC     |     12 | 09:00:00 | 10:00:00 |
-|   8 | PR Travels  |      4 | non-AC |     20 | 10:00:00 | 09:00:00 |
-|   9 | PR Travels  |      4 | AC     |     20 | 09:00:00 | 01:00:00 |
-+-----+-------------+--------+--------+--------+----------+----------+
-8 rows in set (0.01 sec)
-
-
+mysql> desc busdetail;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| bid      | int         | NO   | PRI | NULL    | auto_increment |
+| bname    | varchar(12) | YES  |     | NULL    |                |
+| routId   | int         | YES  | MUL | NULL    |                |
+| btype    | varchar(6)  | YES  |     | NULL    |                |
+| bseats   | int         | YES  |     | NULL    |                |
+| dtime    | time        | YES  |     | NULL    |                |
+| atime    | time        | YES  |     | NULL    |                |
+| helpline | varchar(10) | YES  | MUL | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
 
 
 
 create table busroute
 (
-routId int primary key auto_increment,
+routId int unique not null auto_increment,
 source varchar(15),
-destination varchar(15)
+destination varchar(15),
+primary key (source,destination)
 );
 
 insert into busroute(source, destination) values('Rudrapur','Almora');
-insert into busroute(source, destination) values('Haldwani','Moradabad');
-insert into busroute(source, destination) values('Delhi','Haldwani');
-insert into busroute(source, destination) values('Almora','Chamoli');
-insert into busroute(source, destination) values('Dehradun','Haldwani');
+
+mysql> desc busroute;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| routId      | int         | NO   | UNI | NULL    | auto_increment |
+| source      | varchar(15) | NO   | PRI | NULL    |                |
+| destination | varchar(15) | NO   | PRI | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
 
 
-mysql> select * from busroute;
-+--------+----------+-------------+
-| routId | source   | destination |
-+--------+----------+-------------+
-|      1 | Rudrapur | Almora      |
-|      2 | Haldwani | Moradabad   |
-|      3 | Delhi    | Haldwani    |
-|      4 | Almora   | Chamoli     |
-|      5 | Dehradun | Haldwani    |
-+--------+----------+-------------+
-5 rows in set (0.01 sec)
+create table user
+(
+userid int primary key auto_increment,
+username varchar(12) unique not null,
+password varchar(15),
+contact varchar(10),
+name
+);
+
+mysql> desc user;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| userid   | int         | NO   | PRI | NULL    | auto_increment |
+| username | varchar(12) | NO   | UNI | NULL    |                |
+| password | varchar(15) | YES  |     | NULL    |                |
+| contact  | varchar(10) | YES  |     | NULL    |                |
+| name     | varchar(12) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
 
 
 
-
-
-create table seatAllocation
+create table seatallocation
 (
 tid int primary key auto_increment,
-pid int,
+userid int,
 slable int,
 bid int,
-foreign key(bid) references busdetails(bid),
-foreign key(pid) references pdetails(pid)
+foreign key(bid) references busdetail(bid),
+foreign key(userid) references user(userid )
 );
 
 insert into seatallocation(pid,slable,bid) values(1,2,2);
-insert into seatallocation(pid,slable,bid) values(1,4,2);
-insert into seatallocation(pid,slable,bid) values(1,7,2);
-insert into seatallocation(pid,slable,bid) values(2,2,5);
 
-
-mysql> select * from seatallocation;
-+-----+------+--------+------+
-| tid | pid  | slable | bid  |
-+-----+------+--------+------+
-|   2 |    1 |      2 |    2 |
-|   3 |    1 |      4 |    2 |
-|   4 |    1 |      7 |    2 |
-|   5 |    2 |      2 |    5 |
-|   6 |    5 |      2 |    7 |
-|   7 |    5 |      4 |    7 |
-|   8 |    5 |      3 |    7 |
-|   9 |    5 |      5 |    7 |
-+-----+------+--------+------+
-8 rows in set (0.01 sec)
+mysql> desc seatallocation;
++--------+------+------+-----+---------+----------------+
+| Field  | Type | Null | Key | Default | Extra          |
++--------+------+------+-----+---------+----------------+
+| tid    | int  | NO   | PRI | NULL    | auto_increment |
+| userid | int  | YES  | MUL | NULL    |                |
+| slable | int  | YES  |     | NULL    |                |
+| bid    | int  | YES  | MUL | NULL    |                |
+| trdate | date | YES  |     | NULL    |                |
++--------+------+------+-----+---------+----------------+
 
 
 
 
 
 
-create table pdetails
-(
-pid int primary key auto_increment,
-pname varchar(12),
-pemail varchar(15) 
-);
-
-insert into pdetails(pname,pemail) values('anurag','anurag@gmail.com');
-insert into pdetails(pname,pemail) values('param','param@gmail.com');
-insert into pdetails(pname,pemail) values('sham','sham@gmail.com');
 
 
-mysql> select * from pdetails;
-+-----+--------+------------------+
-| pid | pname  | pemail           |
-+-----+--------+------------------+
-|   1 | anurag | anurag@gmail.com |
-|   2 | param  | param@gmail.com  |
-|   3 | sham   | sham@gmail.com   |
-|   4 | alka   | alka@gmail.com   |
-|   5 | alka   | @alka@gmail.com  |
-|   6 | alka   | alka@gmail.com   |
-|   7 | shiv   | shiv@gmail.com   |
-+-----+--------+------------------+
-7 rows in set (0.01 sec)
+
+
 
 
 
