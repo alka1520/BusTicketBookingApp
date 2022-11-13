@@ -2,16 +2,6 @@ package com.model;
 
 public class User {
 	
-//	private int pid;
-//	private String pname;
-//	private String email;
-//	private String pword;
-//	public int getPid() {
-//		return pid;
-//	}
-//	public void setPid(int pid) {
-//		this.pid = pid;
-//	}
 	private String name;
 	private int userid;
 	private String username;

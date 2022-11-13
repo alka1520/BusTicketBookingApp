@@ -16,7 +16,7 @@ public class AdminAddingBusDetails {
 		System.out.print("Bus Name : ");
 		String bname = scn.next();
 		
-		System.out.print("Bus Type : ");
+		System.out.print("Bus Type(AC/non-AC) : ");
 		String bustype = scn.next();
 		
 		System.out.print("Departure Time(HH:MM:SS) : ");
