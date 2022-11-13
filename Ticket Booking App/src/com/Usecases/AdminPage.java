@@ -6,7 +6,7 @@ public class AdminPage {
 	
 	public AdminPage() {
 		
-		Scanner scn = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 		System.out.println("________________________\n");
 		
 		while(true) {
@@ -14,7 +14,7 @@ public class AdminPage {
 			System.out.println("Enter 0 : Exit");
 			System.out.println("Enter 1 : Login");
 			System.out.println("Enter 2 : New Admin/Sign up");
-			int select = scn.nextInt();
+			int select = s.nextInt();
 			
 			if(select == 1) {
 				AdminLogin la = new AdminLogin();

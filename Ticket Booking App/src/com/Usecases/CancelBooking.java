@@ -22,8 +22,8 @@ public class CancelBooking {
 			List<BookingDetails> booking = dao.bookingDetailsPrint(userid,date,uname);
 			booking.forEach(ticketDetails -> System.out.println(ticketDetails));
 			
-			System.out.println("\n Enter 1 : confirming cancel");
-			System.out.println("\n Enter 0 : Exit");
+			System.out.println("\nEnter 1 : confirming cancel");
+			System.out.println("Enter 0 : Exit");
 			int select = scn.nextInt();
 			if(select == 1) {
 				String msg = dao.cancelBooking(userid);

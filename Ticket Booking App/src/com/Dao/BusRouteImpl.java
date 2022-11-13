@@ -146,7 +146,7 @@ public class BusRouteImpl implements BusRoute{
 					
 			int x = ps2.executeUpdate();
 			if(x>0) {
-				msg = seat+" Seat Reservation Successfull";
+				msg = " Seat "+seat+"Reservation Successfull";
 			}else{
 				throw new BookingException("Error Occurred !");
 			}
@@ -239,7 +239,7 @@ public class BusRouteImpl implements BusRoute{
 			
 			if(rs.next()) {
 				int bid = rs.getInt("bid");
-				int pid_count = rs.getInt("count(pid)");
+				int pid_count = rs.getInt("count(userid)");
 				
 				PreparedStatement ps2 = conn.prepareStatement("Delete from seatallocation where userid = ? ");
 				
