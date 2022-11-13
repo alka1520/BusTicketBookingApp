@@ -40,12 +40,6 @@ public class AdminAddingBusRoutes {
 				if(select == 1) {
 					AdminAddingBusRoutes aabr = new AdminAddingBusRoutes(contact);
 				}
-				break;
-//				else if(select == 0){
-//					break;
-//				}else {
-//					System.out.println("Please enter valid choice");
-//				}
 			}
 		}
 	}
