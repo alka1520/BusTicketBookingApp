@@ -44,6 +44,6 @@ public class UserRegistration {
 		} catch (UserException e) {
 			System.out.println("\n"+e.getMessage());
 		}
-		System.out.println("____Sign up Page____ \n");
+		System.out.println("_________________________ \n");
 	}
 }

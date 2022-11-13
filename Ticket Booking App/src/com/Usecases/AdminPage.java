@@ -11,9 +11,9 @@ public class AdminPage {
 		
 		while(true) {
 			
-			System.out.println("Enter 0 : Exit");
 			System.out.println("Enter 1 : Login");
 			System.out.println("Enter 2 : New Admin/Sign up");
+			System.out.println("Enter 0 : Exit");
 			int select = s.nextInt();
 			
 			if(select == 1) {

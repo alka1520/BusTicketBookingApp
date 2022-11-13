@@ -26,6 +26,7 @@ public class AdminAddingBusDetails {
 		
 		System.out.print("Total Seats : ");
 		int bseats = scnn.nextInt();
+		System.out.println();
 		
 		BusDetails bdetails = new BusDetails(bname, bustype, broute, bseats, dtime, atime,contact);
 		AdminDao dao = new AdminDaoImpl();
@@ -33,11 +34,12 @@ public class AdminAddingBusDetails {
 		try {
 			String msg = dao.insertBusDetails(bdetails);
 			System.out.println(msg);
-			System.out.println("\n _____________________________ \n");
 			
 		} catch (AdminException e) {
 			System.out.println(e.getMessage());
 			
+		}finally {
+			System.out.println("\n _____________________________ \n");
 		}
 		
 	}
