@@ -26,10 +26,9 @@ public class UserSelectSeatsAndBusID {
 			String msg = dao.confirmTotalNoOfSeats(bid, noseats);
 			int userid = dao.getUserId(uname);
 			
-			System.out.print("Seat Number : ");
-			
 			List<Integer> seats = new ArrayList<>();
 			while(noseats > 0) {
+				System.out.print("Seat Number : ");
 				int seatnumber = scn.nextInt();
 				try {
 					String d = dao.confirmSeatNumberForReservation(userid,seatnumber,bid,date);

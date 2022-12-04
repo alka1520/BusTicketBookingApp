@@ -12,7 +12,7 @@ public class AdminAddingBusRoutes {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("___________________________");
-		System.out.println("____Enter Route Details____ \n");
+		System.out.println("____Enter Bus Details____ \n");
 		
 		System.out.print("From : ");
 		String from = sc.next();
@@ -24,7 +24,7 @@ public class AdminAddingBusRoutes {
 		int routeid;
 		try {
 			 routeid =  dao.addNewRoute(from, to);
-			AdminAddingBusDetails aabd = new AdminAddingBusDetails(routeid,contact);
+			 AdminAddingBusDetails aabd = new AdminAddingBusDetails(routeid,contact);
 			
 		} catch (AdminException e) {
 			System.out.println(e.getMessage());
@@ -40,10 +40,8 @@ public class AdminAddingBusRoutes {
 				int select = sc.nextInt();
 				if(select == 1) {
 					AdminAddingBusRoutes aabr = new AdminAddingBusRoutes(contact);
-				}else {
-					break;
 				}
-				
+				break;
 			}
 		}
 	}

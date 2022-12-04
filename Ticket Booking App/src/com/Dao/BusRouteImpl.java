@@ -65,7 +65,7 @@ public class BusRouteImpl implements BusRoute{
 						throw new BookingException("can't find the route ");
 					}
 				}else {
-					throw new BookingException("no booking available for today");
+					throw new BookingException("no booking available");
 				}
 			
 			
@@ -146,7 +146,7 @@ public class BusRouteImpl implements BusRoute{
 					
 			int x = ps2.executeUpdate();
 			if(x>0) {
-				msg = " Seat "+seat+"Reservation Successfull";
+				msg = " Seat "+seat+" Reservation Successfull";
 			}else{
 				throw new BookingException("Error Occurred !");
 			}
