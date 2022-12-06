@@ -30,7 +30,7 @@ public class UserLogin {
 		
 		try {
 			User udetail = dao.userLogin(uname, pword);
-			System.out.println("\n Welcome "+udetail.getUsername()+ "\n");
+			System.out.println("\nWelcome "+udetail.getUsername()+ "\n");
 			
 			
 			System.out.println("Enter 1 : Cancel Booking");

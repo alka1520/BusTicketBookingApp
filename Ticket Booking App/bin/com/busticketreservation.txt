@@ -4,9 +4,9 @@ bus ticket reservation system\\\\\
 create table Admin 
 (
 name varchar(12),
-username varchar(12) primary key,
+username varchar(12) unique not null,
 password varchar(12),
-contact varchar(12),
+contact varchar(10) primary key,
 email varchar(15)
 )
 
@@ -32,8 +32,8 @@ bseats int,
 dtime time,
 atime time,
 helpline varchar(10),
-foreign key(helpline) references admin(contact),
-foreign key(routId) references busroute(routId)
+foreign key(helpline) references admin(contact) ON DELETE CASCADE,
+foreign key(routId) references busroute(routId) ON DELETE CASCADE  
 )
 
 insert into busdetail(bname, routId, btype, bseats, dtime, atime,helpline) values('SRV Travels', 1, 'AC',15, '02:00:00','09:00:00','1234567890');
@@ -78,9 +78,9 @@ create table user
 (
 userid int primary key auto_increment,
 username varchar(12) unique not null,
-password varchar(15),
-contact varchar(10),
-name
+password varchar(15) not null,
+contact varchar(10) not null,
+name varchar(12) not null
 );
 
 mysql> desc user;
@@ -102,8 +102,8 @@ tid int primary key auto_increment,
 userid int,
 slable int,
 bid int,
-foreign key(bid) references busdetail(bid),
-foreign key(userid) references user(userid )
+foreign key(bid) references busdetail(bid)ON DELETE CASCADE,
+foreign key(userid) references user(userid)ON DELETE CASCADE
 );
 
 insert into seatallocation(pid,slable,bid) values(1,2,2);

@@ -9,10 +9,11 @@ public class AdminPage {
 		Scanner s = new Scanner(System.in);
 		
 		while(true) {
-			System.out.println("________________________\n");
+			System.out.println("________________________");
+			System.out.println("____Admin Page____ \n");
+			System.out.println("Enter 0 : Return");
 			System.out.println("Enter 1 : Login");
 			System.out.println("Enter 2 : New Admin/Sign up");
-			System.out.println("Enter 0 : Exit");
 			int select = s.nextInt();
 			
 			if(select == 1) {

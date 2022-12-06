@@ -62,10 +62,10 @@ public class BusRouteImpl implements BusRoute{
 						}
 					}
 					else {
-						throw new BookingException("can't find the route ");
+						throw new BookingException("can't find the route .");
 					}
 				}else {
-					throw new BookingException("no booking available");
+					throw new BookingException("No booking available .");
 				}
 			
 			
@@ -99,13 +99,13 @@ public class BusRouteImpl implements BusRoute{
 
 				int x = ps.executeUpdate();
 				if(x>0) {
-					message = "updated successfully";
+					message = "updated successfully .";
 				}else {
 					throw new BookingException("error occurred !");
 				}
 			}
 			else {
-				throw new BookingException("Seats Unavailable!");
+				throw new BookingException("Seats Unavailable !");
 			}
 						
 		} catch (SQLException e) {
@@ -135,7 +135,7 @@ public class BusRouteImpl implements BusRoute{
 			while(rs.next()) {
 				String result = rs.getString("result");
 				if(result.contains("yes")) {
-					throw new BookingException("Seat already Reserved, Select another one");
+					throw new BookingException("Seat already Reserved, Select another one .");
 				}
 			}
 			PreparedStatement ps2 = conn.prepareStatement("insert into seatallocation (userid,slable,bid,trdate) values(?,?,?,?)");
@@ -146,7 +146,7 @@ public class BusRouteImpl implements BusRoute{
 					
 			int x = ps2.executeUpdate();
 			if(x>0) {
-				msg = " Seat "+seat+" Reservation Successfull";
+				msg = "Seat "+seat+" Reservation Successfull .";
 			}else{
 				throw new BookingException("Error Occurred !");
 			}
@@ -175,7 +175,7 @@ public class BusRouteImpl implements BusRoute{
 			if(rs.next()) {
 				pid = rs.getInt("userid");
 			}else {
-				throw new BookingException("Error occured !");
+				throw new BookingException("User not found !");
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -288,7 +288,7 @@ public class BusRouteImpl implements BusRoute{
 			if(rs.next()) {
 				date = rs.getString("trdate");
 			}else {
-				throw new BookingException("Error occured !");
+				throw new BookingException("No Booking available to cancel !");
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

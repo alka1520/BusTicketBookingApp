@@ -9,7 +9,7 @@ public class MainBusTicketRerservation {
 		
 		
 		while(true) {
-			
+			System.out.println("____Home Page____ \n");
 			System.out.println("Enter 1 to Bus Reservation query .");
 			System.out.println("Enter 2 to Add Bus Details/Admin .");
 			System.out.println("Enter 0 to Exit .");

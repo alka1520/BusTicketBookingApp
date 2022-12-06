@@ -36,7 +36,6 @@ public class CancelBooking {
 			System.out.println(e.getMessage());
 		}
 		
-		System.out.println("_________________________");
 
 	}
 }

@@ -8,10 +8,10 @@ public class UserPage {
 		
 		Scanner scn = new Scanner(System.in);
 		
-		System.out.println("________________________\n");
+		System.out.println("________________________");
 		
 		while(true) {
-			
+			System.out.println("____User Page____ \n");
 			System.out.println("Enter 0 : Return");
 			System.out.println("Enter 1 : Login");
 			System.out.println("Enter 2 : New User");

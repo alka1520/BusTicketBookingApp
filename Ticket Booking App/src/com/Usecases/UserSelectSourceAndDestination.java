@@ -1,3 +1,4 @@
+
 package com.Usecases;
 
 import java.util.ArrayList;
@@ -38,15 +39,14 @@ public class UserSelectSourceAndDestination {
 			System.out.println("Enter 0 : Exit ");
 			
 			int selection = scn.nextInt();
-			
 			if(selection == 1) {
 				UserSelectSeatsAndBusID ssab = new UserSelectSeatsAndBusID(date,uname);
 				
 			}else if(selection == 0) {
-				System.out.println("\n Thank you :)");
+				System.out.println("\nThank you :)");
 				
 			}else {
-				System.out.println("\n enter valid choice");
+				System.out.println("\nenter valid choice");
 			}
 			
 			

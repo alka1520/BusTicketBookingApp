@@ -39,7 +39,7 @@ public class AdminAddingBusDetails {
 			System.out.println(e.getMessage());
 			
 		}finally {
-			System.out.println("\n _____________________________ \n");
+			System.out.println("_____________________________ \n");
 		}
 		
 	}

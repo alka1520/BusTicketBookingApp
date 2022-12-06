@@ -13,7 +13,8 @@ public class UserSelectSeatsAndBusID {
 	public UserSelectSeatsAndBusID(String date,String uname) {
 		
 		Scanner scn = new Scanner(System.in);
-		
+		System.out.println("________________________\n");
+
 		System.out.print("BusID : ");
 		int bid = scn.nextInt();
 		

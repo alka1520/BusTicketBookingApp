@@ -102,11 +102,10 @@ tid int primary key auto_increment,
 userid int,
 slable int,
 bid int,
+trdate date,
 foreign key(bid) references busdetail(bid)ON DELETE CASCADE,
 foreign key(userid) references user(userid)ON DELETE CASCADE
 );
-
-insert into seatallocation(pid,slable,bid) values(1,2,2);
 
 mysql> desc seatallocation;
 +--------+------+------+-----+---------+----------------+
