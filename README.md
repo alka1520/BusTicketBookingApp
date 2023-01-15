@@ -17,17 +17,14 @@ Consumer can use the service provided by Admin like Ticket booking, Ticket cance
 <img src ="https://user-images.githubusercontent.com/107465771/205937134-dc3dce0e-4ebe-4e5a-9610-3914ea352b40.png" height="400"/>
   
  <h3>Admin Side Flow :-<h3>  
-   
-   
-   
-   
-   
-   <img src ="https://user-images.githubusercontent.com/107465771/205939394-f4e37d57-0d54-4419-861c-04a7fb7d1bd7.png" height="400"/>
+ <img src ="https://user-images.githubusercontent.com/107465771/205939394-f4e37d57-0d54-4419-861c-04a7fb7d1bd7.png" height="400"/>
 
    
    
    
    
    
-   <h2>Tech Stack<h2>
- JAVA, JDBC, MySql
+ <h2>Tech Stack<h2>
+ <p>-Java <br>
+ -JDBC <br>
+ -MySql </p><br>
